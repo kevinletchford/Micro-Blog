@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <div className="ui container">
+        <h1>microBLOG</h1>
+        <div className="ui form">
+          <div className="field">
+            <input type="text" placeholder="Search..." />
+          </div>
+          <div className="field">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+          </div>
+                    <button className="ui button">
+            Discard
+          </button>
+          <button className="ui primary button">
+            Save
+          </button>
+
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }
