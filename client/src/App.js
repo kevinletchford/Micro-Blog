@@ -9,12 +9,12 @@ class App extends Component {
         <h1>microBLOG</h1>
         <div className="ui form">
           <div className="field">
-            <input type="text" placeholder="Search..." />
+            <input type="text" placeholder="Post Title.." />
           </div>
           <div className="field">
             <textarea name="" id="" cols="30" rows="10"></textarea>
           </div>
-                    <button className="ui button">
+          <button className="ui button">
             Discard
           </button>
           <button className="ui primary button">
