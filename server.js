@@ -1,10 +1,7 @@
-const express = require('express');
-const fs = require('fs');
-const sqlite = require('sql.js');
+import express from 'express'
 import Promise from 'bluebird';
-const filebuffer = fs.readFileSync('db/micro-blog.sqlite3');
+import db from 'sqlite';    
 
-import db from 'sqlite';      
 
 const app = express();
 
@@ -22,8 +19,6 @@ app.get('/api/posts', async (req, res, next) => {
   }
 });
 
-
-
 Promise.resolve()
   // First, try to open the database
   .then(() => db.open('db/micro-blog.sqlite3', { Promise }))      // <=
@@ -35,12 +30,8 @@ Promise.resolve()
   .finally(() => app.listen(port));
 
 
-
-
-
-
-/* https://medium.com/@tarkus/node-js-and-sqlite-for-rapid-prototyping-bc9cf1f26f10 */
-  https://travishorn.com/what-did-i-learn-this-week-knex-js-bookshelf-js-95d3490e3a6f
+/* https://medium.com/@tarkus/node-js-and-sqlite-for-rapid-prototyping-bc9cf1f26f10 
+  https://travishorn.com/what-did-i-learn-this-week-knex-js-bookshelf-js-95d3490e3a6f*/
 /*
 
    db.run("UPDATE tbl SET name = $name WHERE id = $id", {
