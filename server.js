@@ -13,7 +13,7 @@ export default app;
 app.set('port', (process.env.API_PORT || 3001));
 
 
-app.get('/posts', async (req, res, next) => {
+app.get('/api/posts', async (req, res, next) => {
   try {
     const posts = await db.all('SELECT * FROM BlogPosts LIMIT 10'); // <=
     res.send(posts);
@@ -21,6 +21,7 @@ app.get('/posts', async (req, res, next) => {
     next(err);
   }
 });
+
 
 
 Promise.resolve()
@@ -34,9 +35,20 @@ Promise.resolve()
   .finally(() => app.listen(port));
 
 
-/* https://medium.com/@tarkus/node-js-and-sqlite-for-rapid-prototyping-bc9cf1f26f10 */
 
+
+
+
+/* https://medium.com/@tarkus/node-js-and-sqlite-for-rapid-prototyping-bc9cf1f26f10 */
+  https://travishorn.com/what-did-i-learn-this-week-knex-js-bookshelf-js-95d3490e3a6f
 /*
+
+   db.run("UPDATE tbl SET name = $name WHERE id = $id", {
+          $id: 2,
+          $name: "bar"
+      });
+
+
 
 const COLUMNS = [
   'PostId',

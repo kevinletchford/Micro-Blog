@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
+	render() {
+		return (
       <div className="ui container">
         <h1>microBLOG</h1>
         <div className="ui form">
@@ -14,17 +13,13 @@ class App extends Component {
           <div className="field">
             <textarea name="" id="" cols="30" rows="10"></textarea>
           </div>
-          <button className="ui button">
-            Discard
-          </button>
-          <button className="ui primary button">
-            Save
-          </button>
+          <button className="ui button">Discard</button>
+          <button className="ui primary button">Save</button>
 
         </div>
       </div>
-    );
-  }
+		);
+	}
 }
 
 export default App;
